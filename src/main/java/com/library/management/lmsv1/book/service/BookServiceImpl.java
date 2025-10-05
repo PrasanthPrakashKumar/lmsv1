@@ -67,8 +67,6 @@ public class BookServiceImpl implements BookService {
                 && bookRepository.existsByIsbn(requestDto.getIsbn())) {
             throw new DuplicateResourceException("ISBN already exists");
         }
-        System.out.println("Update book API called with id =" + id);
-        System.out.println("Details of fetched book are " + book.getAuthor() + " " + book.getId() + " " + book.getTitle());
         if (requestDto.getTitle() != null) book.setTitle(requestDto.getTitle());
         if (requestDto.getAuthor() != null) book.setAuthor(requestDto.getAuthor());
         if (requestDto.getIsbn() != null) book.setIsbn(requestDto.getIsbn());
